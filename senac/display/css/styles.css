@@ -1,0 +1,134 @@
+/* display bloco embutido */
+ 
+.inline-block{
+    width: 300px;
+    height: 300px;
+    background-color: #754;
+    font-size: xx-large;
+    margin: 15px;
+    color: white;
+    display: inline-block;
+}
+ 
+/* display bloco de exibição */
+ 
+.block{
+    background-color: darkmagenta;
+    color:white;
+    font-size: xx-large;
+    margin: 10px;
+    display: block;
+}
+ 
+/* escondendo o elemento */
+ 
+.escondendo{
+    display: none;
+}
+ 
+/* posição estática - ele esse segue o fluxo do html, static não é afetado por top, right, left ou bottom */
+ 
+.static{
+    position: static;
+    background-color: #848;
+    color: white;
+    width: 100px;
+    height: 100px;
+}
+ 
+/* posição relativa - top, right, bottom e left afetam esse, ai nao precisa usar margin, pq o margin mexe na margem do site e nao do bloco*/
+.relative{
+    position:relative;
+    width: 100px;
+    height: 100px;
+    color:white;
+    background-color:brown;
+    top:50px;
+    left: 50px;
+}
+ 
+/* posição absoluta em relação à janela, ex coloquei top e left 2px, vai ser em relação ao absoluto do site */
+ 
+.absolute{
+    position: absolute;
+    width: 100px;
+    height:100px;
+    background-color: #785;
+    color: white;
+    top: 2px;
+    left: 2px;
+}
+ 
+/* posição relativa com absoluta */
+ 
+.bloco-relative{
+    width: 250px;
+    height: 250px;
+    border: 2px solid blue;
+    margin-top: 100px;
+    /* o proximo codigo faz com q os blocos de dentro fiquem absolutos dentro desse bloco relativo */
+    position: relative;
+}
+ 
+.bloco-absoluto-1, .bloco-absoluto-2{
+    width: 70px;
+    height: 70px;
+    background-color: brown;
+    position: absolute;
+}
+ 
+/* deu erro pq ficou um bloco em cima do outro, precisa colocar o relative no bloco relativo */
+.bloco-absoluto-1{
+    top: 2px;
+    left: 2px;
+}
+ 
+.bloco-absoluto-2{
+    bottom: 10px;
+    right: 10px;
+}
+ 
+/* posição sticky (como se fosse pegajoso, ele acompanha a pagina na rolagem)*/
+ 
+.sticky{
+    position: sticky;
+    width: 150px;
+    height: 150px;
+    background-color: firebrick;
+    color: aliceblue;
+    border: 2px solid black;
+    top:10px;
+}
+ 
+/* Z-index: aqui estou aproveitando o style anterior do bloco relative da posição relativa com absoluta */
+.bloco-absoluto-3, .bloco-absoluto-4, .bloco-absoluto-5{
+    width: 60px;
+    height: 60px;
+    background-color: coral;
+    position:absolute;
+ 
+}
+ 
+/* a primeira div q eu chamei vai ficar atras e assim por diante
+caso queira q ela fique na frente, resolvemos com o z-index, o maior número
+vai ficar na frente: */
+ 
+.bloco-absoluto-3{
+    top: 0;
+    left: 0;
+    z-index: 3;
+}
+ 
+.bloco-absoluto-4{
+    top:15px;
+    left:15px;
+    background-color: darkgray;
+    z-index: 2;
+}
+ 
+.bloco-absoluto-5{
+    top: 30px;
+    left: 30px;
+    background-color: lightgreen;
+    z-index: 1;
+}
